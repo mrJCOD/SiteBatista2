@@ -1,7 +1,7 @@
-describe('empty spec', () => {
+describe('Cadastro de Usuario', () => {
 
 
-    it('passes', () => {
+    it('Validar tela de Cadastro e cadastro de usuario', () => {
         cy.visit('https://automacaocombatista.herokuapp.com/users/new')
         cy.get('#user_name').type('Josivaldo')
         cy.get('#user_name').should('have.value', 'Josivaldo')
@@ -39,6 +39,13 @@ describe('empty spec', () => {
         cy.get('#new_user > div:nth-child(6) > div:nth-child(2) > div > label').should('have.text', 'Idade')
         cy.get('.actions > input').should('have.value', 'Criar')
         cy.get('.waves-light').should('have.text', 'Voltar')
+
+        cy.get('.actions').click()
+        cy.get('#notice').should('have.text', 'Usuário Criado com sucesso')
+
+
+
+
 
 
 
